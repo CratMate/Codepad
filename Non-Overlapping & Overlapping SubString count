@@ -1,0 +1,27 @@
+## Non-Overlapping & Overlapping SubString count
+
+import java.util.*;
+public class Hello {
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter String -");
+		String word=sc.next();   //aaaaa
+		System.out.println("Enter pattern -");
+		String pattern=sc.next(); //aa
+		int count=0,start_i=0,index;
+		while((index = word.indexOf(pattern,start_i))!=-1)
+		{
+		    start_i = index + pattern.length(); //nonoverlapping
+		    start_i = index + 1; //overlapping
+		    count ++;
+		}
+		System.out.println("Substring Count-"+c);
+	}
+}
+
+TIME COMPLEXITY = STRING LENGTH / PATTERN LENGTH
+
+INPUT : word = aaaaa
+        pattern = aa
+	non-overlapping count = 2 (aa aa)
+	overlapping count = 4 (aa aa aa aa)
